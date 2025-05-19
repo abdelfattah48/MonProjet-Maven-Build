@@ -1,0 +1,22 @@
+package com.exemple;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        GestionStockServiceJdbc service = new GestionStockServiceJdbc();
+
+        System.out.print("Nom du produit : ");
+        String nom = scanner.nextLine();
+
+        System.out.print("Quantité : ");
+        int quantite = scanner.nextInt();
+
+        System.out.print("Prix : ");
+        double prix = scanner.nextDouble();
+
+        Produit produit = new Produit(0, nom, quantite, prix);
+        service.ajouterProduit(produit);
+    }
+}
